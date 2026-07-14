@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ee">
+  <title>민수 & 코코아 | Wedding Invitation</title>
+  <meta name="description" content="김민수와 이소자키 코코아의 결혼식에 초대합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#292522; --muted:#716a63; --paper:#f7f3ee; --sand:#e7ddd0; --line:rgba(51,42,35,.14); --accent:#8d6755; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:"Noto Serif KR","Noto Sans JP",serif; }
+    .page { width:min(100%, 520px); margin:0 auto; background:var(--paper); overflow:hidden; min-height:100vh; box-shadow:0 0 40px rgba(62,45,30,.06); }
+    .hero { position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; isolation:isolate; background:#a9988a url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1440&q=85') center/cover; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(22,17,13,.1) 10%,rgba(22,17,13,.68) 100%); }
+    .lang { position:absolute; z-index:1; top:22px; right:20px; display:flex; padding:4px; border:1px solid rgba(255,255,255,.45); border-radius:999px; background:rgba(15,12,9,.16); backdrop-filter:blur(8px); }
+    .lang button { appearance:none; border:0; border-radius:999px; background:transparent; color:#fff; padding:7px 11px; font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.08em; cursor:pointer; } .lang button.active { color:#332c25; background:#fff; }
+    .hero-copy { padding:40px 28px 46px; text-align:center; } .eyebrow { margin:0 0 17px; font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.2em; } h1 { margin:0; font:400 clamp(42px,12vw,62px)/1 "DM Serif Display","Noto Serif KR",serif; letter-spacing:-.03em; } .date { margin:18px 0 0; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.17em; }
+    section { padding:76px 28px; text-align:center; } .flourish { color:var(--accent); font:400 22px "DM Serif Display",serif; letter-spacing:.18em; } .message { padding-top:66px; } .message h2 { margin:20px 0 22px; font:400 25px/1.45 "Noto Serif KR",serif; letter-spacing:-.04em; } .message p { margin:0; color:#4e4842; font-size:15px; line-height:2.05; word-break:keep-all; }
+    .couple { padding-top:30px; } .couple::before { content:""; display:block; width:1px; height:58px; margin:0 auto 30px; background:var(--sand); } .names { font:400 31px/1.45 "DM Serif Display","Noto Serif KR",serif; letter-spacing:-.03em; } .names small { display:block; margin-top:8px; color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; letter-spacing:.06em; } .amp { display:block; margin:6px 0; color:var(--accent); font:italic 21px "DM Serif Display",serif; }
+    .details { padding:66px 28px 0; } .details-card { padding:34px 20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .details-label { color:var(--accent); font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.18em; } .details-time { margin:12px 0 0; font:400 20px/1.7 "DM Serif Display","Noto Serif KR",serif; } .details-time span { display:block; font-size:15px; }
+    .location { padding-bottom:84px; } .location h2 { margin:14px 0 5px; font:400 25px "Noto Serif KR",serif; } .location .venue-sub { color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; } .map { display:block; width:100%; height:260px; margin-top:30px; border:0; filter:grayscale(1) sepia(.08) contrast(.9); } .map-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:14px 18px; border:1px solid var(--ink); color:var(--ink); text-decoration:none; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.04em; } .map-link:hover { background:var(--ink); color:#fff; }
+    footer { padding:25px; border-top:1px solid var(--line); color:#90867d; text-align:center; font:400 10px "Noto Sans JP",sans-serif; letter-spacing:.08em; } [data-lang] { display:none; } [data-lang].show { display:block; } .inline[data-lang].show { display:inline; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- Replace the hero image URL in .hero's background property with your own image later. -->
+    <header class="hero">
+      <div class="lang" aria-label="Language selection"><button class="active" data-set-lang="ko">한국어</button><button data-set-lang="ja">日本語</button></div>
+      <div class="hero-copy">
+        <p class="eyebrow">WEDDING INVITATION</p><h1>Minsoo <i>&</i> Cocoa</h1><p class="date">2026. 12. 13 · 17:00</p>
+      </div>
+    </header>
+    <section class="message">
+      <span class="flourish">— ✦ —</span>
+      <div data-lang="ko" class="show"><h2>서로의 계절이 되어<br>함께 걸어가려 합니다</h2><p>다른 언어로 시작된 두 사람의 이야기가<br>같은 마음을 향해 한 걸음씩 이어져 왔습니다.<br>서로의 가장 다정한 편이 되어<br>새로운 날들을 함께 만들어 가겠습니다.<br><br>저희의 첫걸음에 함께해 주세요.</p></div>
+      <div data-lang="ja"><h2>ふたりの季節を重ねて<br>ともに歩んでまいります</h2><p>違う言葉から始まったふたりの物語は、<br>同じ想いへと少しずつつながってきました。<br>これからは互いのいちばん優しい味方として、<br>新しい日々を紡いでまいります。<br><br>はじまりの日を、ぜひ見届けてください。</p></div>
+    </section>
+    <section class="couple"><div class="names"><div>김민수 <small>金 民 洙</small></div><span class="amp">&</span><div>이소자키 코코아 <small>磯 﨑 心 愛</small></div></div></section>
+    <section class="details"><div class="details-card"><div class="details-label" data-lang="ko">WEDDING DAY</div><div class="details-label" data-lang="ja">挙式日時</div><div class="details-time" data-lang="ko"><span>2026년 12월 13일 일요일</span>오후 5시</div><div class="details-time" data-lang="ja"><span>2026年12月13日（日）</span>午後5時</div></div></section>
+    <section class="location"><div class="details-label" data-lang="ko">LOCATION</div><div class="details-label" data-lang="ja">会場</div><h2>아벤티움 웨딩홀</h2><p class="venue-sub" data-lang="ko">아래 지도에서 위치를 확인해 주세요</p><p class="venue-sub" data-lang="ja">下の地図から会場をご確認ください</p><iframe class="map" title="아벤티움 웨딩홀 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%EC%95%84%EB%B2%A4%ED%8B%B0%EC%9B%80%20%EC%9B%A8%EB%94%A9%ED%99%80&output=embed"></iframe><a class="map-link" href="https://maps.app.goo.gl/HrhwjsN6btKKBhLx7" target="_blank" rel="noreferrer"><span data-lang="ko">Google 지도에서 보기 ↗</span><span data-lang="ja">Google マップで見る ↗</span></a></section>
+    <footer>MIN SOO &amp; COCOA · 13 DECEMBER 2026</footer>
+  </main>
+  <script>
+    const switches = document.querySelectorAll('[data-set-lang]');
+    const blocks = document.querySelectorAll('[data-lang]');
+    function setLanguage(lang) { document.documentElement.lang = lang; blocks.forEach(el => el.classList.toggle('show', el.dataset.lang === lang)); switches.forEach(btn => { const active = btn.dataset.setLang === lang; btn.classList.toggle('active', active); btn.setAttribute('aria-pressed', active); }); localStorage.setItem('wedding-language', lang); }
+    switches.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.setLang)));
+    setLanguage(localStorage.getItem('wedding-language') || 'ko');
+  </script>
+</body>
+</html>
