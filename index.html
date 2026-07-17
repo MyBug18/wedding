@@ -13,13 +13,15 @@
     :root { --ink:#292522; --muted:#716a63; --paper:#f7f3ee; --sand:#e7ddd0; --line:rgba(51,42,35,.14); --accent:#8d6755; }
     * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:"Noto Serif KR","Noto Sans JP",serif; }
     .page { width:min(100%, 520px); margin:0 auto; background:var(--paper); overflow:hidden; min-height:100vh; box-shadow:0 0 40px rgba(62,45,30,.06); }
-    .hero { position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; isolation:isolate; background:#a9988a url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1440&q=85') center/cover; }
+    .hero { position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; isolation:isolate; background:#a9988a url('assets/main.jpg') center/cover; }
     .hero::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(22,17,13,.1) 10%,rgba(22,17,13,.68) 100%); }
     .lang { position:absolute; z-index:1; top:22px; right:20px; display:flex; padding:4px; border:1px solid rgba(255,255,255,.45); border-radius:999px; background:rgba(15,12,9,.16); backdrop-filter:blur(8px); }
     .lang button { appearance:none; border:0; border-radius:999px; background:transparent; color:#fff; padding:7px 11px; font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.08em; cursor:pointer; } .lang button.active { color:#332c25; background:#fff; }
     .hero-copy { padding:40px 28px 46px; text-align:center; } .eyebrow { margin:0 0 17px; font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.2em; } h1 { margin:0; font:400 clamp(42px,12vw,62px)/1 "DM Serif Display","Noto Serif KR",serif; letter-spacing:-.03em; } .date { margin:18px 0 0; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.17em; }
     section { padding:76px 28px; text-align:center; } .flourish { color:var(--accent); font:400 22px "DM Serif Display",serif; letter-spacing:.18em; } .message { padding-top:66px; } .message h2 { margin:20px 0 22px; font:400 25px/1.45 "Noto Serif KR",serif; letter-spacing:-.04em; } .message p { margin:0; color:#4e4842; font-size:15px; line-height:2.05; word-break:keep-all; }
     .couple { padding-top:30px; } .couple::before { content:""; display:block; width:1px; height:58px; margin:0 auto 30px; background:var(--sand); } .names { font:400 31px/1.45 "DM Serif Display","Noto Serif KR",serif; letter-spacing:-.03em; } .names small { display:block; margin-top:8px; color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; letter-spacing:.06em; } .amp { display:block; margin:6px 0; color:var(--accent); font:italic 21px "DM Serif Display",serif; }
+    .gallery { padding:66px 28px 0; } .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:24px; } .gallery-grid img { width:100%; aspect-ratio:1/1; object-fit:cover; cursor:pointer; background:var(--sand); }
+    .lightbox { position:fixed; inset:0; z-index:50; background:rgba(15,12,9,.94); visibility:hidden; opacity:0; transition:opacity .25s; touch-action:pan-y; } .lightbox.open { visibility:visible; opacity:1; } .lightbox-track { display:flex; width:100%; height:100%; } .lightbox-track img { flex:0 0 100%; width:100%; height:100%; object-fit:contain; } .lightbox-close { position:absolute; top:18px; right:20px; z-index:2; width:36px; height:36px; border:0; border-radius:50%; background:rgba(255,255,255,.14); color:#fff; font-size:16px; cursor:pointer; } .lightbox-dots { position:absolute; left:0; right:0; bottom:24px; display:flex; justify-content:center; gap:7px; } .lightbox-dots span { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); } .lightbox-dots span.active { background:#fff; }
     .details { padding:66px 28px 0; } .details-card { padding:34px 20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .details-label { color:var(--accent); font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.18em; } .details-time { margin:12px 0 0; font:400 20px/1.7 "DM Serif Display","Noto Serif KR",serif; } .details-time span { display:block; font-size:15px; }
     .location { padding-bottom:84px; } .location h2 { margin:14px 0 5px; font:400 25px "Noto Serif KR",serif; } .location .venue-sub { color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; } .map { display:block; width:100%; height:260px; margin-top:30px; border:0; filter:grayscale(1) sepia(.08) contrast(.9); } .map-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:14px 18px; border:1px solid var(--ink); color:var(--ink); text-decoration:none; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.04em; } .map-link:hover { background:var(--ink); color:#fff; }
     footer { padding:25px; border-top:1px solid var(--line); color:#90867d; text-align:center; font:400 10px "Noto Sans JP",sans-serif; letter-spacing:.08em; } [data-lang] { display:none; } [data-lang].show { display:block; } .inline[data-lang].show { display:inline; }
@@ -27,7 +29,6 @@
 </head>
 <body>
   <main class="page">
-    <!-- Replace the hero image URL in .hero's background property with your own image later. -->
     <header class="hero">
       <div class="lang" aria-label="Language selection"><button class="active" data-set-lang="ko">한국어</button><button data-set-lang="ja">日本語</button></div>
       <div class="hero-copy">
@@ -40,16 +41,122 @@
       <div data-lang="ja"><h2>ふたりの季節を重ねて<br>ともに歩んでまいります</h2><p>違う言葉から始まったふたりの物語は、<br>同じ想いへと少しずつつながってきました。<br>これからは互いのいちばん優しい味方として、<br>新しい日々を紡いでまいります。<br><br>はじまりの日を、ぜひ見届けてください。</p></div>
     </section>
     <section class="couple"><div class="names"><div>김민수 <small>金 民 洙</small></div><span class="amp">&</span><div>이소자키 코코아 <small>磯 﨑 心 愛</small></div></div></section>
+    <section class="gallery" id="gallery"><div class="details-label" data-lang="ko">GALLERY</div><div class="details-label" data-lang="ja">ギャラリー</div><div class="gallery-grid" id="galleryGrid"></div></section>
     <section class="details"><div class="details-card"><div class="details-label" data-lang="ko">WEDDING DAY</div><div class="details-label" data-lang="ja">挙式日時</div><div class="details-time" data-lang="ko"><span>2026년 12월 13일 일요일</span>오후 5시</div><div class="details-time" data-lang="ja"><span>2026年12月13日（日）</span>午後5時</div></div></section>
     <section class="location"><div class="details-label" data-lang="ko">LOCATION</div><div class="details-label" data-lang="ja">会場</div><h2>아벤티움 웨딩홀</h2><p class="venue-sub" data-lang="ko">아래 지도에서 위치를 확인해 주세요</p><p class="venue-sub" data-lang="ja">下の地図から会場をご確認ください</p><iframe class="map" title="아벤티움 웨딩홀 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%EC%95%84%EB%B2%A4%ED%8B%B0%EC%9B%80%20%EC%9B%A8%EB%94%A9%ED%99%80&output=embed"></iframe><a class="map-link" href="https://maps.app.goo.gl/HrhwjsN6btKKBhLx7" target="_blank" rel="noreferrer"><span data-lang="ko">Google 지도에서 보기 ↗</span><span data-lang="ja">Google マップで見る ↗</span></a></section>
     <footer>MIN SOO &amp; COCOA · 13 DECEMBER 2026</footer>
   </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox-track" id="lightboxTrack"></div>
+    <div class="lightbox-dots" id="lightboxDots"></div>
+  </div>
   <script>
     const switches = document.querySelectorAll('[data-set-lang]');
     const blocks = document.querySelectorAll('[data-lang]');
     function setLanguage(lang) { document.documentElement.lang = lang; blocks.forEach(el => el.classList.toggle('show', el.dataset.lang === lang)); switches.forEach(btn => { const active = btn.dataset.setLang === lang; btn.classList.toggle('active', active); btn.setAttribute('aria-pressed', active); }); localStorage.setItem('wedding-language', lang); }
     switches.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.setLang)));
     setLanguage(localStorage.getItem('wedding-language') || 'ko');
+
+    (function () {
+      const MAX_PHOTOS = 10;
+      const EXTENSIONS = ['jpg', 'jpeg', 'png'];
+      const gallerySection = document.getElementById('gallery');
+      const grid = document.getElementById('galleryGrid');
+      const lightbox = document.getElementById('lightbox');
+      const track = document.getElementById('lightboxTrack');
+      const dotsWrap = document.getElementById('lightboxDots');
+      const closeBtn = document.getElementById('lightboxClose');
+      let photos = [];
+      let current = 0;
+
+      function loadCandidate(src) {
+        return new Promise(resolve => {
+          const img = new Image();
+          img.onload = () => resolve(src);
+          img.onerror = () => resolve(null);
+          img.src = src;
+        });
+      }
+
+      async function findPhoto(index) {
+        for (const ext of EXTENSIONS) {
+          const found = await loadCandidate(`assets/gallery/${index}.${ext}`);
+          if (found) return found;
+        }
+        return null;
+      }
+
+      function updateTrack(animate) {
+        track.style.transition = animate ? 'transform .3s ease' : 'none';
+        track.style.transform = `translateX(${-current * 100}%)`;
+        [...dotsWrap.children].forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(photos.length - 1, index));
+        updateTrack(true);
+      }
+
+      function openLightbox(index) {
+        current = index;
+        updateTrack(false);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      let touchStartX = 0;
+      let touchDeltaX = 0;
+      track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchDeltaX = 0; track.style.transition = 'none'; }, { passive: true });
+      track.addEventListener('touchmove', e => {
+        touchDeltaX = e.touches[0].clientX - touchStartX;
+        track.style.transform = `translateX(calc(${-current * 100}% + ${touchDeltaX}px))`;
+      }, { passive: true });
+      track.addEventListener('touchend', () => {
+        if (touchDeltaX < -50 && current < photos.length - 1) current++;
+        else if (touchDeltaX > 50 && current > 0) current--;
+        updateTrack(true);
+      });
+
+      (async function init() {
+        const results = await Promise.all(Array.from({ length: MAX_PHOTOS }, (_, i) => findPhoto(i + 1)));
+        photos = results.filter(Boolean);
+        if (!photos.length) { gallerySection.style.display = 'none'; return; }
+
+        photos.forEach((src, i) => {
+          const thumb = document.createElement('img');
+          thumb.src = src;
+          thumb.loading = 'lazy';
+          thumb.alt = '';
+          thumb.addEventListener('click', () => openLightbox(i));
+          grid.appendChild(thumb);
+
+          const slide = document.createElement('img');
+          slide.src = src;
+          slide.alt = '';
+          track.appendChild(slide);
+
+          const dot = document.createElement('span');
+          dotsWrap.appendChild(dot);
+        });
+      })();
+    })();
   </script>
 </body>
 </html>
