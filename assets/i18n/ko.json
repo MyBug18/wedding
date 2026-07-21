@@ -8,10 +8,10 @@
     "body": "다른 언어로 시작된 두 사람의 이야기가<br>같은 마음을 향해 한 걸음씩 이어져 왔습니다.<br>서로의 가장 다정한 편이 되어<br>새로운 날들을 함께 만들어 가겠습니다.<br><br>저희의 첫걸음에 함께해 주세요."
   },
   "couple": {
-    "groomName": "김민수",
-    "groomHanja": "金 民 洙",
-    "brideName": "이소자키 코코아",
-    "brideHanja": "磯 﨑 心 愛"
+    "groomNameMain": "김민수",
+    "groomNameSub": "金 民 洙",
+    "brideNameMain": "이소자키 코코아",
+    "brideNameSub": "磯 﨑 心 愛"
   },
   "gallery": {
     "label": "GALLERY"

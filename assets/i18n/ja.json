@@ -8,10 +8,10 @@
     "body": "違う言葉から始まったふたりの物語は、<br>同じ想いへと少しずつつながってきました。<br>これからは互いのいちばん優しい味方として、<br>新しい日々を紡いでまいります。<br><br>はじまりの日を、ぜひ見届けてください。"
   },
   "couple": {
-    "groomName": "김민수",
-    "groomHanja": "金 民 洙",
-    "brideName": "이소자키 코코아",
-    "brideHanja": "磯 﨑 心 愛"
+    "groomNameMain": "金 民 洙",
+    "groomNameSub": "キム・ミンス",
+    "brideNameMain": "磯 﨑 心 愛",
+    "brideNameSub": "いそざき・ここあ"
   },
   "gallery": {
     "label": "ギャラリー"
