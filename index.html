@@ -24,6 +24,8 @@
     .lightbox { position:fixed; inset:0; z-index:50; background:rgba(15,12,9,.94); visibility:hidden; opacity:0; transition:opacity .25s; touch-action:pan-y; } .lightbox.open { visibility:visible; opacity:1; } .lightbox-track { display:flex; width:100%; height:100%; } .lightbox-track img { flex:0 0 100%; width:100%; height:100%; object-fit:contain; } .lightbox-close { position:absolute; top:18px; right:20px; z-index:2; width:36px; height:36px; border:0; border-radius:50%; background:rgba(255,255,255,.14); color:#fff; font-size:16px; cursor:pointer; } .lightbox-dots { position:absolute; left:0; right:0; bottom:24px; display:flex; justify-content:center; gap:7px; } .lightbox-dots span { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); } .lightbox-dots span.active { background:#fff; }
     .details { padding:66px 28px 0; } .details-card { padding:34px 20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .details-label { color:var(--accent); font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.18em; } .details-time { margin:12px 0 0; font:400 20px/1.7 "DM Serif Display","Noto Serif KR",serif; } .details-time span { display:block; font-size:15px; }
     .location { padding-bottom:84px; } .location h2 { margin:14px 0 5px; font:400 25px "Noto Serif KR",serif; } .location .venue-note { margin:0 0 5px; color:var(--muted); font:400 12px "Noto Sans JP",sans-serif; letter-spacing:.02em; } .location .venue-sub { color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; } .map-img { display:block; width:100%; margin-top:30px; filter:grayscale(1) sepia(.08) contrast(.9); } .map-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:14px 18px; border:1px solid var(--ink); color:var(--ink); text-decoration:none; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.04em; } .map-link:hover { background:var(--ink); color:#fff; }
+    .account { padding:0 28px 76px; } .account-btn { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:14px 18px; border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.04em; } .account-btn:hover { background:var(--ink); color:#fff; }
+    .modal { position:fixed; inset:0; z-index:60; background:rgba(41,37,34,.55); display:flex; align-items:center; justify-content:center; padding:24px; visibility:hidden; opacity:0; transition:opacity .2s; } .modal.open { visibility:visible; opacity:1; } .modal-card { position:relative; width:100%; max-width:340px; background:var(--paper); padding:36px 28px 28px; text-align:center; box-shadow:0 20px 60px rgba(20,15,10,.25); } .modal-close { position:absolute; top:12px; right:12px; width:32px; height:32px; border:0; border-radius:50%; background:var(--sand); color:var(--ink); font-size:14px; cursor:pointer; } .modal-label { margin:0 0 14px; color:var(--accent); font:500 11px "Noto Sans JP",sans-serif; letter-spacing:.18em; } .modal-bank { margin:0; color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; } .modal-number { margin:8px 0 4px; font:400 22px "DM Serif Display","Noto Serif KR",serif; letter-spacing:-.01em; } .modal-name { margin:0 0 22px; color:var(--muted); font:400 13px "Noto Sans JP",sans-serif; } .modal-copy { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer; font:500 12px "Noto Sans JP",sans-serif; letter-spacing:.04em; } .modal-copy:hover, .modal-copy.copied { background:var(--ink); color:#fff; }
     footer { padding:25px; border-top:1px solid var(--line); color:#90867d; text-align:center; font:400 10px "Noto Sans JP",sans-serif; letter-spacing:.08em; }
   </style>
 </head>
@@ -44,12 +46,23 @@
     <section class="gallery" id="gallery"><div class="details-label" data-i18n="gallery.label">GALLERY</div><div class="gallery-grid" id="galleryGrid"></div></section>
     <section class="details"><div class="details-card"><div class="details-label" data-i18n="details.label">WEDDING DAY</div><div class="details-time" data-i18n="details.dateTime"><span>2026년 12월 13일 일요일</span>오후 5시</div></div></section>
     <section class="location"><div class="details-label" data-i18n="location.label">LOCATION</div><h2 data-i18n="location.venueName">아벤티움 웨딩홀</h2><p class="venue-note" data-i18n="location.venueNote"></p><p class="venue-sub" data-i18n="location.venueSub">아래 지도에서 위치를 확인해 주세요</p><img class="map-img" data-i18n-attr="src:location.mapSrc,alt:location.mapAlt" src="assets/gallery/map/map_kr.jpg" alt="아벤티움 웨딩홀 지도"><a class="map-link" data-i18n="location.mapLinkText" data-i18n-attr="href:location.mapLinkHref" href="https://kko.to/pzXUOXH5OY" target="_blank" rel="noreferrer">카카오맵에서 보기 ↗</a></section>
+    <section class="account" data-lang-only="ko"><div class="details-label" data-i18n="account.sectionLabel">마음 전하실 곳</div><button class="account-btn" id="accountBtn" type="button" data-i18n="account.buttonLabel">계좌번호 보기</button></section>
     <footer>MIN SOO &amp; COCOA · 13 DECEMBER 2026</footer>
   </main>
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
     <div class="lightbox-track" id="lightboxTrack"></div>
     <div class="lightbox-dots" id="lightboxDots"></div>
+  </div>
+  <div class="modal" id="accountModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="accountModalClose" aria-label="Close">✕</button>
+      <p class="modal-label" data-i18n="account.modalLabel">신랑측</p>
+      <p class="modal-bank" data-i18n="account.bank">국민은행</p>
+      <p class="modal-number" id="accountNumber" data-i18n="account.number">943202-00-522786</p>
+      <p class="modal-name" data-i18n="account.holder">김민수</p>
+      <button class="modal-copy" id="accountCopyBtn" type="button" data-i18n="account.copyLabel">계좌번호 복사</button>
+    </div>
   </div>
   <script>
     const switches = document.querySelectorAll('[data-set-lang]');
@@ -82,6 +95,7 @@
       document.documentElement.lang = lang;
       switches.forEach(btn => { const active = btn.dataset.setLang === lang; btn.classList.toggle('active', active); btn.setAttribute('aria-pressed', active); });
       localStorage.setItem('wedding-language', lang);
+      document.querySelectorAll('[data-lang-only]').forEach(el => { el.style.display = el.dataset.langOnly === lang ? '' : 'none'; });
       applyTranslations(lang);
     }
 
@@ -95,6 +109,64 @@
       translations = { ko, ja };
       setLanguage(currentLang);
     }).catch(err => console.warn('Failed to load translations', err));
+
+    (function () {
+      const accountBtn = document.getElementById('accountBtn');
+      const accountModal = document.getElementById('accountModal');
+      const accountModalClose = document.getElementById('accountModalClose');
+      const accountCopyBtn = document.getElementById('accountCopyBtn');
+      const accountNumberEl = document.getElementById('accountNumber');
+
+      function openAccountModal() {
+        accountModal.classList.add('open');
+        accountModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeAccountModal() {
+        accountModal.classList.remove('open');
+        accountModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      accountBtn.addEventListener('click', openAccountModal);
+      accountModalClose.addEventListener('click', closeAccountModal);
+      accountModal.addEventListener('click', e => { if (e.target === accountModal) closeAccountModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && accountModal.classList.contains('open')) closeAccountModal(); });
+
+      function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+        document.body.removeChild(textarea);
+        return ok;
+      }
+
+      accountCopyBtn.addEventListener('click', async () => {
+        const number = accountNumberEl.textContent.replace(/[^0-9]/g, '');
+        let copied = false;
+        try {
+          await navigator.clipboard.writeText(number);
+          copied = true;
+        } catch (err) {
+          copied = fallbackCopy(number);
+        }
+        if (!copied) return;
+        const dict = translations.ko && translations.ko.account;
+        accountCopyBtn.textContent = (dict && dict.copiedLabel) || accountCopyBtn.textContent;
+        accountCopyBtn.classList.add('copied');
+        setTimeout(() => {
+          accountCopyBtn.textContent = (dict && dict.copyLabel) || accountCopyBtn.textContent;
+          accountCopyBtn.classList.remove('copied');
+        }, 1500);
+      });
+    })();
 
     (function () {
       const MAX_PHOTOS = 10;
