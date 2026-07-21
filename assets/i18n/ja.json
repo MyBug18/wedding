@@ -1,0 +1,33 @@
+{
+  "common": {
+    "langKo": "한국어",
+    "langJa": "日本語"
+  },
+  "message": {
+    "heading": "ふたりの季節を重ねて<br>ともに歩んでまいります",
+    "body": "違う言葉から始まったふたりの物語は、<br>同じ想いへと少しずつつながってきました。<br>これからは互いのいちばん優しい味方として、<br>新しい日々を紡いでまいります。<br><br>はじまりの日を、ぜひ見届けてください。"
+  },
+  "couple": {
+    "groomName": "김민수",
+    "groomHanja": "金 民 洙",
+    "brideName": "이소자키 코코아",
+    "brideHanja": "磯 﨑 心 愛"
+  },
+  "gallery": {
+    "label": "ギャラリー"
+  },
+  "details": {
+    "label": "挙式日時",
+    "dateTime": "<span>2026年12月13日（日）</span>午後5時"
+  },
+  "location": {
+    "label": "会場",
+    "venueName": "아벤티움 웨딩홀",
+    "venueNote": "（アベンティウムウェディング会場）",
+    "venueSub": "下の地図から会場をご確認ください",
+    "mapSrc": "assets/gallery/map/map_jp.jpg",
+    "mapAlt": "アベンティウムウェディングホール地図",
+    "mapLinkText": "Google マップで見る ↗",
+    "mapLinkHref": "https://maps.app.goo.gl/HrhwjsN6btKKBhLx7"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "common": {
+    "langKo": "한국어",
+    "langJa": "日本語"
+  },
+  "message": {
+    "heading": "서로의 계절이 되어<br>함께 걸어가려 합니다",
+    "body": "다른 언어로 시작된 두 사람의 이야기가<br>같은 마음을 향해 한 걸음씩 이어져 왔습니다.<br>서로의 가장 다정한 편이 되어<br>새로운 날들을 함께 만들어 가겠습니다.<br><br>저희의 첫걸음에 함께해 주세요."
+  },
+  "couple": {
+    "groomName": "김민수",
+    "groomHanja": "金 民 洙",
+    "brideName": "이소자키 코코아",
+    "brideHanja": "磯 﨑 心 愛"
+  },
+  "gallery": {
+    "label": "GALLERY"
+  },
+  "details": {
+    "label": "WEDDING DAY",
+    "dateTime": "<span>2026년 12월 13일 일요일</span>오후 5시"
+  },
+  "location": {
+    "label": "LOCATION",
+    "venueName": "아벤티움 웨딩홀",
+    "venueNote": "",
+    "venueSub": "아래 지도에서 위치를 확인해 주세요",
+    "mapSrc": "assets/gallery/map/map_kr.jpg",
+    "mapAlt": "아벤티움 웨딩홀 지도",
+    "mapLinkText": "카카오맵에서 보기 ↗",
+    "mapLinkHref": "https://kko.to/pzXUOXH5OY"
+  }
+}
