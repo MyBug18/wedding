@@ -67,7 +67,13 @@
   <script>
     const switches = document.querySelectorAll('[data-set-lang]');
     let translations = {};
-    let currentLang = localStorage.getItem('wedding-language') || 'ko';
+
+    function detectBrowserLang() {
+      const primary = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+      return primary.toLowerCase().startsWith('ja') ? 'ja' : 'ko';
+    }
+
+    let currentLang = localStorage.getItem('wedding-language') || detectBrowserLang();
 
     function getPath(obj, path) {
       return path.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
